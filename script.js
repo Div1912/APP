@@ -132,4 +132,12 @@ const courses = [
   
     courseList.appendChild(courseItem);
   });
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /chatbot-responses/{document=**} {
+      allow read: if true;
+    }
+  }
+}
+
   
